@@ -1,8 +1,8 @@
-import combineReducer from "./upDown"
-import {combineReducer} from "redux";
+import changeNumber from "./upDown"
+import {combineReducers} from "redux";
 
-const rootReducer = combineReducer({
+const rootReducer = combineReducers({
     changeNumber
-})
+});
 
-export default rootReducer
+export default rootReducer;
