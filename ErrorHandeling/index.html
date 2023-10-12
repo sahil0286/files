@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter Number Between 5 to 10</p>
+    <input type="text" id="get">
+    <button onclick="myFun()">Check Now</button>
+    <p id="result"></p>
+
+    <script>
+        function myFun()
+        {
+            let inputValue=document.getElementById("get").value;
+            let message=document.getElementById("result");
+            message.innerHTML="";
+            console.log(message)
+            console.log(inputValue)
+            try {
+                if(inputValue<5)
+                {
+                    message.innerHTML="To Low";
+                    throw "To Low"
+                }
+                 if(inputValue>10)
+                {
+                    throw "To High"
+                }
+                 if(isNaN(inputValue))
+                {
+                    throw "Not a number"
+                }
+                 if(inputValue=="")
+                {
+                    throw "Value is Empty"
+                }
+                if(inputValue<=5 & inputValue>=10)
+                {
+                    throw "Perfect"
+                }
+            } catch (error) {
+                message.innerHTML=error.message;
+            }
+            finally
+            {
+                inputValue.innerHTML="";
+            }
+        }
+    </script>
+
+</body>
+</html>
